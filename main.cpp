@@ -16,8 +16,8 @@ public:
 
 int main(int argc, char *argv[])
 {
-    NewTuple<1, size_t> newTup;
-    NewTuple<0, size_t, size_t>t=newTup;
+    //NewTuple<1, size_t> newTup;
+    //NewTuple<0, size_t, size_t>t=newTup;
     //vector<int>vec;
     //Test obj;
     //vec.push_back((int)obj);
