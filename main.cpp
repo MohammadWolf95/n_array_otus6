@@ -1,28 +1,38 @@
 #include <iostream>
 #include "matrix.h"
+#include <assert.h>
+#include <memory>
+#include <newtuple.h>
 
 using namespace std;
 
+/*class Test{
+public:
+    int fl = 5;
+    operator auto(){
+        return fl;
+    }
+};*/
+
 int main(int argc, char *argv[])
 {
-    NSpaceVector nsv;
-        nsv[2][4][7][4] = 2;
-        cout << nsv[2][4][7][4] << endl; //-> 2
-    //Matrix<int, -1> matrix;
-    /*cout<<"matrix.size() = "<<matrix.size()<<endl;
-    matrix[100][100]=300;
-    matrix.size();
-    cout<<"matrix.size() = "<<matrix.size()<<endl;*/
-    //cout<<matrix[0][0]<<endl;
-    //matrix[0][0]=300;
-    //cout<<matrix.size();
-
-    /*for(Matrix<int, -1>::iterator i= matrix.begin();i!=matrix.end();i++)
-    {
-        int x;
-        int y;
-        int v;
-        std::tie(x, y, v) = i.tup;
-        std::cout << x << y << v << std::endl;
-    }*/
+    NewTuple<1, size_t> newTup;
+    NewTuple<0, size_t, size_t>t=newTup;
+    //vector<int>vec;
+    //Test obj;
+    //vec.push_back((int)obj);
+    using Matrix = SubSpace<3, -1, int>;
+    Matrix matrix;
+    auto a = matrix[1][2][1][2];
+    assert(a == -1);
+    assert(matrix.size()==0);
+    matrix[1][2][1][2]=100;
+    assert(matrix.size()==1);
+    matrix[1][2][1][2]=50;
+    assert(matrix.size()==1);
+    matrix[1][2][1][3]=50;
+    a = matrix[1][2][1][3];
+    assert(a == 50);
+    assert(matrix.size()==2);
 }
+

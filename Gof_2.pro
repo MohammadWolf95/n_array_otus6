@@ -18,4 +18,7 @@ SOURCES += main.cpp \
     matrix.cpp
 
 HEADERS += \
-    matrix.h
+    matrix.h \
+    printtuple.h \
+    looptuple.h \
+    newtuple.h
