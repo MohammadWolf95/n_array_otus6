@@ -5,30 +5,16 @@
 
 using namespace std;
 
-template<size_t number, typename T=int,typename...Args>
-class NewTuple;
-
-template<typename T, typename...Args>
-class NewTuple<0, T, Args...>{
-public:
-    operator tuple<Args..., T>(){
-        tuple<Args..., T>tup;
-        get<0>(tup)=0;
-        //get<1>(tup)=1;
-        //get<2>(tup)=2;
-        //get<3>(tup)=3;
-        return tup;
-    }
+template<typename T, typename K, size_t N, typename... REST>
+struct generate_tuple_type
+{
+ typedef typename generate_tuple_type<T, K, N-1, T, REST...>::type type;
 };
 
-template<size_t number, typename T, typename...Args>
-class NewTuple{
-public:
-    using InsideTuple = NewTuple<number - 1, T, Args..., size_t>;
-    InsideTuple obj;
-    operator auto(){
-        return obj;
-    }
+template<typename T, typename K, typename... REST>
+struct generate_tuple_type<T, K, 0, REST...>
+{
+  typedef std::tuple<REST..., K&> type;
 };
 
 #endif // NEWTUPLE_H
