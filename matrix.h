@@ -33,11 +33,11 @@ public:
             newElement.tup = tup;
             m.insert(make_pair(i, newElement));
 
-            vector<int>vec;
+            /*vector<int>vec;
             for_each(tup, [&vec](auto x){
                 vec.emplace_back(x);
             });
-            tuple_print::print(tup);
+            tuple_print::print(tup);*/
         }
         return m.find(i)->second;
     }

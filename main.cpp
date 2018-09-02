@@ -30,14 +30,7 @@ int main(int argc, char *argv[])
     assert(a == -1);
     assert(matrix.size()==0);
 
-    for(int i=0;i<50;++i)
-        for(int j = 0;j<50;++j)
-            for(int k = 0;k<50;++k)
-                for(int l=0;l<50;++l){
-                    matrix[i][j][k][l]=i+j+k+l;
-                }
-
-    //matrix[1][2][1][2]=100;
+    matrix[1][2][1][2]=100;
 
     for(auto i:matrix){
         int x, y, z, a, result;
@@ -45,12 +38,10 @@ int main(int argc, char *argv[])
         cout<<x<<y<<z<<a<<result<<endl;
     }
 
-    cout<<matrix.size()<<endl;
+    assert(matrix.size()==1);
+    matrix[1][2][1][2]=50;
 
-    //assert(matrix.size()==1);
-    //matrix[1][2][1][2]=50;
-
-    /*assert(matrix.size()==1);
+    assert(matrix.size()==1);
     matrix[1][2][1][3]=50;
     a = matrix[1][2][1][3];
 
@@ -61,6 +52,6 @@ int main(int argc, char *argv[])
     }
 
     assert(a == 50);
-    assert(matrix.size()==2);*/
+    assert(matrix.size()==2);
 }
 
