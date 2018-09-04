@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.2)
 
-project(grasp_mvc VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}) 
+project(n_matrix VERSION 0.0.$ENV{TRAVIS_BUILD_NUMBER}) 
 
 set(SOURCE_PATH "${PROJECT_SOURCE_DIR}/src")
 
@@ -16,13 +16,13 @@ add_executable(n_matrix
 
 add_compile_options(-std=c++11)
 
-set_target_properties(grasp_mvc PROPERTIES
+set_target_properties(n_matrix PROPERTIES
 		CXX_STANDARD 14
 		CXX_STANDARD_REQUIRED ON
 		COMPILE_OPTIONS -Wpedantic -Wall -Wextra
 )
 
-install(TARGETS grasp_mvc RUNTIME DESTINATION bin)
+install(TARGETS n_matrix RUNTIME DESTINATION bin)
 
 set(CPACK_GENERATOR DEB)
 
