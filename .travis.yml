@@ -15,7 +15,7 @@ script:
 - cmake -DBUILD_TESTING=ON -DCMAKE_BUILD_TYPE=Release .
 - cmake .
 - cmake --build .
-- cmake --build . --target test
+#- cmake --build . --target test
 - cmake --build . --target package
 deploy:
   provider: script
