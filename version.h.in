@@ -1,4 +1,4 @@
- #pragma ones
+#pragma ones
 
 #cmakedefine PROJECT_VERSION_PATCH @PROJECT_VERSION_PATCH@
 #cmakedefine PROJECT_VERSION_MINOR @PROJECT_VERSION_MINOR@

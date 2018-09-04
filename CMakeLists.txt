@@ -10,7 +10,7 @@ find_package(Boost COMPONENTS unit_test_framework REQUIRED)
 
 configure_file(version.h.in version.h)
 
-add_executable(grasp_mvc 
+add_executable(n_matrix 
 					${SOURCE_PATH}/main.cpp
 					)
 
